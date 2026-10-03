@@ -1,0 +1,93 @@
+/* 基本カラー */
+:root{
+--color-base:#ffffff;
+--color-text:#1b1a1de4;
+--color-text2:#28292ec1;
+--color-border:#efefef;/*ライトグレー*/
+
+/* アクセントカラー */
+--color-accent: #c2a978; /*ゴールド*/
+--color-accent2: #f7f5f2; /*アイボリー*/
+
+
+
+
+/* グラデーション */
+--gradient:linear-gradient(
+    100deg, 
+    #4dc9ff,
+    #9b9cff,
+    #ff8ed8                 
+ );
+
+
+}
+
+
+/* その他の設定 */
+*{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--color-base);
+    color: var(--color-text);
+    font-family: "M PLUS 1p", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+}
+a{
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+ul li{
+    list-style: none;
+}
+h1{
+    font-size: clamp(2.6rem, 2.2rem + 0.8333vw, 3.2rem);
+}
+h2{
+    font-size: clamp(2rem, 1.6667rem + 0.6944vw, 2.5rem);
+}
+h3{
+    font-size: clamp(1.8rem, 1.5333rem + 0.5556vw, 2.2rem);
+}
+h4{
+    font-size: clamp(1.6rem, 1.3333rem + 0.5556vw, 2rem);
+}
+p,li{
+    font-size: clamp(1.4rem, 1.1333rem + 0.5556vw, 1.8rem);
+}
+small{
+    font-size: clamp(1.2rem, 0.9333rem + 0.5556vw, 1.6rem);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* background-color: rgba(190, 218, 242, 0.2);  */
+
+    /* ↑後で消す */
+}
+
+
+/* outline:1px solid rgb(255, 145, 145); */
+
+/* radial-gradient(#fff 28%, transparent 30%),
+radial-gradient(#fff 28%, transparent 30%);
+background-size: 20px 20px;
+background-position: 0 0 ,10px 10px; */
+
+
+/* font-family: "Caveat", cursive; */
+
+/* pointer-events: none;かauto */

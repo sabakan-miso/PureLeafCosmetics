@@ -1,0 +1,68 @@
+main{
+    padding-top: 0;
+/*---------------------
+   fv画面
+--------------------*/
+
+  
+}
+
+/*----------------
+observeの共通タイトル
+---------------*/
+
+.observe-title{
+    font-family: "Caveat", cursive;
+    font-size: 7rem;
+    line-height: 1.1;
+    writing-mode: vertical-rl;
+    background-image: var(--gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding: 2rem;
+    transform: translateX(-200px) rotate(180deg);/*----- WORKSのタイトルは左側の90pxなのでoptionsで広げる -----*/
+    opacity: 0;
+    transition: transform 0.6s ease, 
+                opacity 0.6s ease;
+}
+.observe-title.active{
+    transform: translateX(0) rotate(180deg);
+    opacity: 1;
+}
+
+
+/*--------------------
+    about
+ ---------------------*/
+
+
+
+
+/*--------------------
+   product
+ ---------------------*/
+
+
+
+
+
+
+/*--------------------
+   news
+ ---------------------*/
+
+
+
+
+
+/*--------------------
+   contact
+ ---------------------*/
+
+    
+
+
+/*--------------------
+     フッター
+ ---------------------*/
