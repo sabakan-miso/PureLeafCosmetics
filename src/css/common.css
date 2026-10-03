@@ -40,13 +40,12 @@ header
         justify-content: space-between;
         align-items: center;
         position: relative;
-         .portfolio{
-                font-family: "Caveat", cursive;
-                font-size: clamp(2rem, 1.3333rem + 1.3889vw, 3rem);
+         .corporation{
                 a{
-                    position: relative;
-                    padding: 0;
-                    color: var(--color-text);
+                    background-image: url(../images/background/title.jpg);
+                    color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
                     &::after{
                         content: "";
                         position: absolute;
@@ -61,7 +60,7 @@ header
                         transition: transform 0.3s ease;
                     }
                     &:hover{
-                        color: var(--color-accent2);
+                        color: var(--color-accent);
                         &::after{
                             transform: scaleX(1);
                         }
@@ -75,7 +74,7 @@ header
                     a{
                         position: relative;
                         padding: 0.3rem 0.8rem;
-                        color: var(--color-accent3);
+                        color: var(--color-text);
                         &::after{
                             content: "";
                             position: absolute;
@@ -90,7 +89,7 @@ header
                             transition: transform 0.3s ease;
                         }
                         &:hover{
-                            color: var(--color-accent2);
+                            color: var(--color-accent);
                             &::after{
                                 transform: scaleX(1);
                             }
@@ -138,7 +137,7 @@ header
     content: "";
     display: block;
     width: 100%;
-    height: 3px;
+    height: 2px;
     position: absolute;
     left: 0;
     background-color: var(--color-text);
@@ -206,25 +205,14 @@ header
 
 
 /* ドロワー内の装飾 */
-.profile-area{
+.name-area{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 3rem;
-    .portfolio{      
-        font-family: "Caveat", cursive;
-        font-size: clampclamp(4rem, 18vw, 7rem);
-        background-image: var(--gradient);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        padding: 1rem;
-        transform: rotate(-8deg) translateX(-1.5rem);
-
-       
-    } 
+    
     .name{
         position: relative;
         display: inline-block;
