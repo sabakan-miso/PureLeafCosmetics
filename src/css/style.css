@@ -1,15 +1,229 @@
 main{
     padding-top: 0;
+}
 /*---------------------
    fv画面
 --------------------*/
-
+.fv{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+   .container{
+        padding:60px 0 0; /*-headerの高さ60px-*/
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fv-container{
+        padding: 60px 0 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .fv-container .box-items{
+        width:100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background-color: aquamarine;
+        & .left-box,
+        & .center-box, 
+        & .right-box{
+            width: calc((100% - 10px) / 3);
+            aspect-ratio: 1/1; /*- 横幅に合わせて縦幅も同じ幅になる -*/
+            
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+/*------
+左側box
+-------*/
+    .container .left-box .left-upper{
+        height: 70%;
+        display: flex;
+        gap: 5px;
+        & .left-item_1{
+            width: 40%;
+            height: 100%;
+            background-image: url(../images/fv/flower_04.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        & .left-item_2{
+            width: 60%;
+            height: 100%;
+            background-image: url(../images/fv/flower_02.jpg);
+            background-position: right;
+            background-size: cover;
+        }
+    }
+    .container .left-box .left-lower{
+        height: 30%;
+        display: flex;
+        gap: 5px;
+        & .left-item_3{
+            width: 70%;
+            height: 100%;
+            background-image: url(../images/fv/bottle_02_small.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        & .left-item_4{
+            width: 30%;
+            height: 100%;
+            background-image: url(../images/fv/tree_01.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+/*------
+真ん中box
+-------*/
+    .container .center-box .center-upper{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        gap: 5px;
+        & .center-item_1{
+            width: 70%;
+            height: 100%;
+            background-image: url(../images/fv/bottle_01.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        & .center-item_2{
+            width: 30%;
+            height: 100%;
+            background-image: url(../images/fv/flower.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    .container .center-box .center-lower{
+        width:100%;
+        height: 70%;
+        display: flex;
+        gap: 5px;
+        & .center-item_3{
+            width: 30%;
+            height: 100%;
+            background-image: url(../images/fv/flower_02.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        & .center-item_4{
+            width: 70%;
+            height: 100%;
+            background-image: url(../images/fv/water_small.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+/*------
+右側box
+-------*/
+    .container .right-box .right-upper{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        gap: 5px;
+        & .right-item_1{
+            width: 70%;
+            height: 100%;
+            background-image: url(../images/fv/flower_03.jpg);
+            background-position: left;
+            background-size: cover;
+        }
+        & .right-item_2{
+            width: 30%;
+            height: 100%;
+            background-image: url(../images/fv/tree_01.jpg);
+            background-position: left;
+            background-size: cover;
+        }
+    }
+    .container .right-box .right-lower{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        gap: 5px;
+        & .right-item_3{
+            width: 50%;
+            height: 100%;
+            background-image: url(../images/fv/bottle_03.jpg);
+            background-position: left;
+            background-size: cover;
+        }
+        & .right-item_4{
+            width: 50%;
+            height: 100%;
+            background-image: url(../images/fv/oil.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}/*- fv終わり -*/
   
-}
+
 
 /*----------------
-observeの共通タイトル
+　fvのobserve
 ---------------*/
+.fv {
+    /* BOXアニメーション */
+    .box-items {
+        & > .left-box,
+        & > .center-box,
+        & > .right-box {
+            opacity: 0;
+            transition:
+                transform 1s ease,
+                opacity 0.8s ease;
+        }
+
+        /* 左 */
+        & > .left-box {
+            transform: translateX(-100px) translateY(50px);
+            transition-delay: 0s;
+        }
+
+        /* 中央 */
+        & > .center-box {
+            transform: translateY(-80px);
+            transition-delay: 0.25s;
+        }
+
+        /* 右 */
+        & > .right-box {
+            transform: translateX(100px) translateY(50px);
+            transition-delay: 0.5s;
+        }
+
+        /* IntersectionObserverで表示された状態 */
+        &.is-active {
+            & > .left-box,
+            & > .center-box,
+            & > .right-box {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    }
+}
+
+
+
+
 
 .observe-title{
     font-family: "Caveat", cursive;

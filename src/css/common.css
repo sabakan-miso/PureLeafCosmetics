@@ -34,6 +34,7 @@ header
     backdrop-filter: blur(9px);
     -webkit-backdrop-filter: blur(9px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 10px rgba(74, 98, 122, 0.5);
     .container{
         height: 100%;
         display: flex;
@@ -42,6 +43,7 @@ header
         position: relative;
          .corporation{
                 a{
+                    position: relative;
                     background-image: url(../images/background/title.jpg);
                     color: transparent;
                     -webkit-background-clip: text;
@@ -385,15 +387,13 @@ footer
 footer{
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background: var(--back-gradient4);
+    
     .container{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 2.5rem;
-        .name-area{
-            font-weight: 700;
-        }
+        
     }
 }
 
