@@ -1,29 +1,29 @@
 "use strict";
-// const $observeTitles = [...document.querySelectorAll(".observe-title")];
-// console.log("observe-title:", $observeTitles);
+// FVのテキストアニメーション
+const $observerTexts = [...document.querySelectorAll(".observer-text")];
 
-// const options = {
-//     rootMargin:"0px 0px 0px 200px",//observe-titleが横幅90pxなので移動-200pxがはみ出てしまうので検知しない
-//     threshold: 0.5,
-// };
+const options = {
+    rootMargin:"0px 0px 0px 200px",//observe-titleが横幅90pxなので移動-200pxがはみ出てしまうので検知しない
+    threshold: 0.5,
+};
 
-// const setItemActive =(entries) =>{
-//     entries.forEach((entry) => {
-//         if(entry.isIntersecting){
-//             entry.target.classList.add("active");
+const observerTextActive =(entries) =>{
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("is-active");
 
-//         }else{
-//             entry.target.classList.remove("active")
-//         }
+        }else{
+            entry.target.classList.remove("is-active")
+        }
 
-//     });
-// };
+    });
+};
 
-// const observer = new IntersectionObserver(setItemActive, options);
+const observerText = new IntersectionObserver(observerTextActive, options);
 
-// $observeTitles.forEach((title) => {
-//     observer.observe(title);
-// });
+$observerTexts.forEach((text) => {
+    observerText.observe(text);
+});
 
 
 // FVのBOXアニメーション

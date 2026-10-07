@@ -30,7 +30,7 @@ header
     z-index: 100;/*----上から3番目----*/
     width: 100%; 
     height: 60px; 
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(9px);
     -webkit-backdrop-filter: blur(9px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -127,7 +127,7 @@ header
                 top: 50%;
                 left: 0;
                 transform: translateY(-50%);
-                background-color: var(--color-text);
+                background-color: var(--color-accent);
                 border-radius: 2px;
                 transition: background-color 0.3s ease;
             }         
@@ -142,7 +142,7 @@ header
     height: 2px;
     position: absolute;
     left: 0;
-    background-color: var(--color-text);
+    background-color: var(--color-accent);
     border-radius: 2px;
     transition: transform 0.2s ease;
 }              
@@ -174,7 +174,7 @@ header
     position: fixed;
     top: 0;
     right: 0;
-    width: 80%;
+    width: min(420px, 85%);
     height: 100vh;   
     padding: 6rem 4rem 4rem;
     background: rgba(255, 255, 255, 0.9);
@@ -185,8 +185,8 @@ header
     justify-content: flex-start;
     align-items: center;
     z-index: 150;   /*----上から2番目----*/
-    border-left: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: -10px 0 30px rgba(120, 160, 200, 0.3);
+    border-left: 1px solid rgba(194, 169, 120, 0.7);
+    box-shadow: -10px 0 30px rgba(70, 60, 40, 0.3);
     transform: translateX(100%);/*----- PCでは右側に隠す -----*/
     visibility: hidden;
     opacity: 0;
@@ -218,23 +218,19 @@ header
     .name{
         position: relative;
         display: inline-block;
-        background-image: var(--gradient-2);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text; 
-        padding-bottom: 0.7rem;
+        color: var(--color-accent);
+        letter-spacing: 0.1em;
+        padding-bottom: 0.8rem;
         &::after{
         content: "";
         display: block;
         width: 60%;
-        height: 3px;
+        height: 2px;
         position: absolute;
         left: 0;
         bottom: 0;
-        
         background: var(--gradient-line);
         border-radius: 5px;
-
         }  
     }
     
@@ -254,61 +250,93 @@ header
             position: relative;
             display: flex;
             align-items: center;
+            gap: 2.5rem;
             width: 100%;
             color: var(--color-accent);
             padding: 1rem 3rem;
-            border-radius: 30px;
-            font-size: 1.8rem;
+            border-radius: 15px;
+            border: 1px solid rgba(194, 169, 120, 0.2);
+            background-color: rgba(255, 255, 255, 0.5);
+            font-size: 1.6rem;
             transition: color 0.3s ease,
+                        background-color 0.3s ease,
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease,
                         transform 0.3s ease;
             &::after{   /*----- 矢印 -----*/
                 content: "";
                 position: absolute;
                 top: 50%;
                 right: 2rem;
-                width: 10px;
-                height: 10px;
-                border-top: 2px solid var(--color-accent);
-                border-right: 2px solid var(--color-accent);
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid var(--color-accent);
+                border-right: 1px solid var(--color-accent);
                 transform: translateY(-50%) rotate(45deg);
-                transition: all 0.3s;
+                transition: all 0.3s ease;
            
             }
             
             &:hover{
-                color: var(--color-accent2);
-                background-image: var(--gradient-3);
+                color: var(--color-base);
+                background: rgba(194, 169, 120, 0.3);
+                border-color: rgba(173, 151, 107, 0.6);
                 transform: translateX(5px);
+                box-shadow: 0 4px 10px rgba(70, 60, 40, 0.1);
                  /*----- 矢印もhoverで色変更 -----*/
                 &::after{
-                    border-top: 2px solid var(--color-accent2);
-                    border-right: 2px solid var(--color-accent2);
+                    border-top: 2px solid var(--color-accent);
+                    border-right: 2px solid var(--color-accent);
+                    right: 1.6rem;
                 } 
             }
-            img{
-                width: 40px;
-                height: 40px;
-                margin-right: 1.5rem;
-                border-radius: 50%;
-                padding: 6px;
-                object-fit: contain;
-            }
-            .home-icon{
-                background-color: #faebf5;
-            }
-            .works-icon{
-                background-color: #cee3fb;
-            }
-            .profile-icon{
-                background-color: #e6dffe;
-            }
-            .other-icon{
-                background-color: #e5fff8;
-            }
-            .contact-icon{
-                background-color: #f4dcf9;
-            }
-        }    
+            
+        }
+        a span:first-child{
+            position: relative;
+            display: inline-block;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            padding-right: 1.5rem;
+        } 
+        a span:first-child::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            border-right: 1px solid var(--color-accent);
+        }
+        a span:last-child{
+            position: relative;
+            display: inline-block;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            padding: 0 1.5rem 2rem 0;
+        }
+        a span:last-child::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        li:nth-child(1) a span:last-child::after{
+            content: "ホーム";
+        }   
+        li:nth-child(2) a span:last-child::after{
+            content: "会社紹介";
+        }   
+        li:nth-child(3) a span:last-child::after{
+            content: "商品";
+        }   
+        li:nth-child(4) a span:last-child::after{
+            content: "お知らせ";
+        }   
+        li:nth-child(5) a span:last-child::after{
+            content: "連絡先";
+        }   
     }
 }
 /*---------------

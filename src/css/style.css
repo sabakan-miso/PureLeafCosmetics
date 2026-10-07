@@ -7,25 +7,53 @@ main{
 .fv{
     position: relative;
     width: 100%;
-    height: 100vh;
-    
+    min-height: auto;
+    height: auto;
+    background-image: url(../images/fv/fv.png);
+    background-position: center;
+    background-size: cover;
    .container{
         padding:60px 0 0; /*-headerの高さ60px-*/
         width: 100%;
-        height: 100%;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .fv-container{
-        padding: 60px 0 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       padding: 100px 10px 80px;
     }
+    .fv-container .fv-copy{
+        color: var(--color-accent);
+        text-align: center;
+        margin-bottom: 5rem;
+        & .observer-text{
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: opacity 1.2s ease,
+                        transform 1.2s ease;
+        }
+        /* 1行目 */
+        & .fv-subtitle.observer-text{
+            transition-delay: 0s;
+        }
+        /* 2行目 */
+        & h1.observer-text{
+            transition-delay: 0.4s;
+        }
+        /* 3行目 */
+        & .fv-description.observer-text{
+            transition-delay: 0.8s;
+        }
+        & .observer-text.is-active{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
     .fv-container .box-items{
         width:100%;
         max-width: 1200px;
@@ -33,13 +61,11 @@ main{
         justify-content: center;
         align-items: center;
         gap: 5px;
-        background-color: aquamarine;
         & .left-box,
         & .center-box, 
         & .right-box{
             width: calc((100% - 10px) / 3);
             aspect-ratio: 1/1; /*- 横幅に合わせて縦幅も同じ幅になる -*/
-            
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -173,11 +199,11 @@ main{
         }
     }
 }/*- fv終わり -*/
-  
+
 
 
 /*----------------
-　fvのobserve
+　fvのBoxのobserve
 ---------------*/
 .fv {
     /* BOXアニメーション */
@@ -221,30 +247,41 @@ main{
     }
 }
 
-
-
-
-
-.observe-title{
-    font-family: "Caveat", cursive;
-    font-size: 7rem;
-    line-height: 1.1;
-    writing-mode: vertical-rl;
-    background-image: var(--gradient);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    padding: 2rem;
-    transform: translateX(-200px) rotate(180deg);/*----- WORKSのタイトルは左側の90pxなのでoptionsで広げる -----*/
-    opacity: 0;
-    transition: transform 0.6s ease, 
-                opacity 0.6s ease;
+/*--------------------
+    fv レスポンシブ
+ ---------------------*/
+@media (max-width: 768px){
+    .fv{
+        min-height: auto;
+        background-image: url(../images/fv/fv-sp.png);
+        background-position: center top;
+        background-size: cover;
+    }
+    .fv .fv-container{
+        padding: 90px 15px 60px;
+        height: auto;
+    }
+    /* BOX同士 */
+    .fv .fv-container .box-items{
+        gap: 3px;
+    }
+    /* BOX内部の上下 */
+    .fv .fv-container .box-items > .left-box,
+    .fv .fv-container .box-items > .center-box,
+    .fv .fv-container .box-items > .right-box{
+        width: calc((100% - 6px) / 3);
+        gap: 3px;
+    }
+    /* BOX内部の左右 */
+    .fv .fv-container .left-box .left-upper,
+    .fv .fv-container .left-box .left-lower,
+    .fv .fv-container .center-box .center-upper,
+    .fv .fv-container .center-box .center-lower,
+    .fv .fv-container .right-box .right-upper,
+    .fv .fv-container .right-box .right-lower{
+        gap: 3px;
+    }
 }
-.observe-title.active{
-    transform: translateX(0) rotate(180deg);
-    opacity: 1;
-}
-
 
 /*--------------------
     about
