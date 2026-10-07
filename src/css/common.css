@@ -368,7 +368,7 @@ header
             background-size: 55% auto ;
             background-position: center;
             border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(100, 150, 200, 0.2);
+            box-shadow: 0 4px 12px rgba(70, 60, 40, 0.3);
             transition: transform 0.3s,
                         box-shadow 0.3s ease;
             &:hover{
