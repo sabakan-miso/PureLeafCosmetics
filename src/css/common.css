@@ -408,6 +408,54 @@ header
 }
 
 
+/*---------------
+   cta_button
+---------------*/
+.cta_button{
+    width: min(100%, 32rem);
+    margin: 3rem auto 0;
+    & a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        min-height: 6rem;
+        padding: 1rem 2.5rem;
+        background-image: var(--gradient-line2);
+        color:var(--color-base);
+        border: 1px solid #c4a15e;
+        border-radius: 999px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        box-shadow: 0 4px 12px rgba(125, 94, 40, 0.3);
+        transition:
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+    }
+    /* 内側の白い線 */
+    & a::before{
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-radius: inherit;
+    }
+    /* ホバー */
+    & a:hover {
+       transform: translateY(-2px);
+        box-shadow: 0 7px 18px rgba(125, 94, 40, 0.4);
+        
+    }
+    & a:hover span:last-child {
+        transform: translateX(5px);
+    }
+}
+
+
+
 
 /*--------------
 footer

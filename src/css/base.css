@@ -8,6 +8,8 @@
 /* アクセントカラー */
 --color-accent: #c2a978; /*ゴールド*/
 --color-accent2: #f7f5f2; /*アイボリー*/
+--color-accent3: #344d43; /*深緑*/
+--color-accent4: #64786e; /*薄い緑*/
 
 
 
@@ -19,6 +21,13 @@
     #b68b37,
     #654d1d                 
  );
+--gradient-line2: linear-gradient(
+        135deg,
+        #b28a45 0%,
+        #e8d19a 35%,
+        #c5a15d 65%,
+        #a77b35 100%
+    );
 
 
 }
@@ -74,7 +83,7 @@ small{
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: rgba(190, 218, 242, 0.2); 
+    /* background-color: rgba(190, 218, 242, 0.2);  */
 
     /* ↑後で消す */
 }

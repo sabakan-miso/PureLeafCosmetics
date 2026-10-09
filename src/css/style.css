@@ -287,13 +287,13 @@ main{
     about
  ---------------------*/
 .about{
-    padding: 10rem 0;
+    padding: 6rem 0;
     background-image: url(../images/about/about_back.jpg);
     background-position: center;
     background-size: cover;
     .about-heading{
         text-align: left;
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
     }
     .about-heading .about-en{
         display: flex;
@@ -326,7 +326,7 @@ main{
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        gap: 4rem;
+        gap: 3rem;
     }
     /*- 左側の文章 -*/
     .about-content .about-copy{
@@ -348,14 +348,15 @@ main{
     /*- 右側のボトル画像 -*/
     .about-content .about-visual{
         position: relative;
-        min-height: 45rem;
+        min-width: 0;
+        min-height: 38rem;
     }
     .about-content .about-visual .about-bottle{
         position: absolute;
         z-index: 1;
-        width: 90%;
-        right: 0;
-        bottom: 0;
+        width: 125%;
+        right: -5%;
+        bottom: -2rem;
         & img{
             display: block;
             width: 100%;
@@ -370,10 +371,10 @@ main{
  ---------------------*/
 @media screen and (max-width:768px) {
     .about{
-        padding: 6rem 0;
+        padding: 5rem 0;
     }
     .about .about-heading{
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
     .about .about-heading .aboug-en{
         font-size: 2rem;
@@ -383,8 +384,8 @@ main{
         width: 45%;
     }
     .about .about-heading h2 {
-        font-size: clamp(2.6rem, 6vw, 3.4rem);
-        line-height: 1.5;
+        font-size: 2.8rem
+        
     }
     .about .about-heading .about-subtitle p {
         font-size: 1.6rem;
@@ -393,7 +394,7 @@ main{
     /* 文章とボトルを縦並びにする */
     .about .about-content{
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1rem;
     }
     .about .about-content .about-copy p:not(.about-lead) {
         font-size: 1.6rem;
@@ -401,18 +402,265 @@ main{
     }
      .about .about-content .about-visual {
         min-height: 0;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 1rem;
+        
     }
     /* ボトルサイズ */
     .about .about-content .about-visual .about-bottle {
         position: relative;
-        width: min(75%, 30rem);
-        right: auto;
+        width: 115%;
+        right: 10%;
         bottom: auto;
+        & img{
+            width: 100%;
+            height: auto;
+        }
     }
+}
+
+
+/*-----　お悩みセクション　-----*/
+.concerns{
+    position: relative;
+    padding: 5rem 0 3rem;
+    background-color:#e5f2f0;
+    & .concerns-heading{
+        text-align: center;
+        margin-bottom: 5rem;
+    } 
+    & .concerns-heading .concerns-en{
+        margin-bottom: 1.5rem;
+        color: var(--color-accent);
+        font-size: 1.5rem;
+        letter-spacing: 0.25rem;
+    }
+    & .concerns-heading h2{
+        margin-bottom: 2rem;
+        font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--color-accent3);
+    } 
+    & .concerns-heading .concerns-intro{
+        font-size: 1.7rem;
+        line-height: 1.9;
+        color: var(--color-accent4);
+    }
+     /* 悩みのリスト */
+    & .concerns-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;        
+    }
+    /* チェックマーク画像 */
+    & .concerns-list .concern-item{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        min-height: 7rem;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(193, 174, 130, 0.35);
+        border-radius: 0.8rem;
+        box-shadow: 0 5px 18px rgba(66, 98, 82, 0.3);
+    
+            & p{
+                font-size: 1.8rem;
+                line-height: 1.8;
+            }
+            /* チェック画像の表示サイズ  */
+            & .concern-mark{
+                width: 3rem;
+                height: 3rem;
+            }
+            /* チェック画像 */
+            & .concern-mark::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/about/check_box.png");
+            background-position: center;
+            background-size: contain;
+            }
+    }
+    & .concerns-message{
+        margin-top: 3rem;
+        text-align: center;
+    }
+    & .concerns-message p{
+        margin-bottom: 1rem;
+        color: #344d43;
+        font-size: 2.2rem;
+        line-height: 1.8;
+    }
+    & .concerns-message span{
+        color: #9d8047;
+        font-size: 1.5rem;
+        letter-spacing: 0.08rem;
+    }
+    .sp-only{
+        display: none;
+    }
+    .triangle {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #e5f2f0;
+        /* 横幅全体が下に向かって三角形 */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        /* 0 0：左上
+        100% 0：右上
+        50% 100%：中央下 */
+    }
+}
+/* マホでは1列にする */
+@media screen and (max-width: 768px) {
+    .concerns {
+        & .concerns-list {
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        & .concern-item {
+            padding: 1.5rem;
+        }
+        .sp-only{
+            display: inline;
+        }
+    }
+    
+}
+
+
+/*-----　選ばれる理由　-----*/
+.reasons {
+  padding: 8rem 0;
+  background-image: url(../images/about/flowe_06.png);
+  background-position: center;
+  background-size: cover;
+  background-color: var(--color-base);
+  .container .reasons-heading{
+    text-align: center;
+    margin-bottom: 5rem;
+    & .reasons-en{
+        color: var(--color-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.15em;
+        }
+    & h2{
+        font-size: clamp(2.2rem, 1.8rem + 1vw, 3.2rem);
+        margin-bottom: 1.5rem;
+        color: var(--color-accent3);
+    }
+    & p{
+        color: var(--color-accent3); 
+    }
+  }
+  .container .reasons-list{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr; /*同じ段のカード同士の高さを揃える*/
+  }
+  .container .reasons-list .reason-item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 34% minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    min-height: 22rem; /* カードの高さを統一 */
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--color-base);
+    height: 100%;
+    overflow: visible; /*メダルがカードからはみ出る感じに*/
+    & img{
+        grid-column: 1;
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;        
+    }
+    & .reason-text{
+        grid-column: 2;
+        min-width: 0;
+    }
+    & .reason-number{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 50%;
+        color: var(--color-base);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        background-color: var(--color-accent4);
+        }
+    & h3{
+        font-size: 2rem;
+        line-height: 1.6;
+        color: var(--color-accent3);
+        margin-bottom: 1rem;
+    }
+    & .reason-line {
+        display: block;
+        width: 7rem;
+        height: 1px;
+        background-color: var(--color-accent);
+        margin-bottom: 1.5rem;
+    }
+    & p {
+        grid-column: 2;
+        font-size: 1.6rem;
+        line-height: 1.9;
+        color: var(--color-accent3);
+    }
+  }
+  /* 最後のカード */
+  .container .reasons-list .reason-item:last-child{
+    padding-bottom: 2rem;
+    & .reason-medal {
+        position: absolute;
+        right: -4rem;
+        top: -1.5rem;
+        width: 12rem;
+        height: 12rem;
+        object-fit: contain;
+        aspect-ratio: 1 / 1;
+        z-index: 2;
+        }
+
+  }
+
+
+}
+
+
+/* レスポンシブ */
+@media (max-width: 1000px) {
+  .reasons .container .reasons-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .reasons .container .reasons-list {
+    grid-template-columns: 1fr;
+    & .reason-item:last-child .reason-medal {
+        right: 1rem;
+        top: 1rem;
+        }
+
+  }
 }
 
 
