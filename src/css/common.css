@@ -430,6 +430,7 @@ header
         font-size: 1.8rem;
         font-weight: 500;
         letter-spacing: 0.1rem;
+        cursor: pointer; /*href=""を入れてないので*/
         box-shadow: 0 4px 12px rgba(125, 94, 40, 0.3);
         transition:
             box-shadow 0.3s ease,

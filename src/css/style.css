@@ -519,7 +519,7 @@ main{
         50% 100%：中央下 */
     }
 }
-/* マホでは1列にする */
+/* スマホでは1列にする */
 @media screen and (max-width: 768px) {
     .concerns {
         & .concerns-list {
@@ -536,7 +536,6 @@ main{
     }
     
 }
-
 
 /*-----　選ばれる理由　-----*/
 .reasons {
@@ -644,7 +643,6 @@ main{
 
 }
 
-
 /* レスポンシブ */
 @media (max-width: 1000px) {
   .reasons .container .reasons-list {
@@ -659,11 +657,8 @@ main{
         right: 1rem;
         top: 1rem;
         }
-
   }
 }
-
-
 
 
 
@@ -671,8 +666,176 @@ main{
    product
  ---------------------*/
 
+/*---------- 商品紹介 ----------*/
+.product-set{
+    padding: clamp(5rem, 8vw, 10rem) 1.5rem;
+    background-image: url(../images/product/product_back.jpg);
+    background-position: center;
+    background-size: cover;
+  /* boxを中央に */
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* 水色のbox */
+  .container .product-set-box{
+    width: 100%;
+    max-width: 62rem;
+    padding: clamp(2rem, 5vw, 4rem);
+    background-color: rgb(232, 247, 254);
+    text-align: center;
+  }
+  .container .product-set-box h2{
+    margin: 0 0 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.6;
+  }
+  /* 商品画像 */
+  .container .product-set-box img{
+    display: block;
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    margin: 0 auto 2rem;
+  }
+  /* 商品名 */
+  .container .product-set-box h3{
+    margin: 0 0 2rem;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    line-height: 1.6;
+  }
+  /* 説明文 */
+  .container .product-set-box p{
+    margin: 0 0 2rem;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    line-height: 1.8;
+  }
+  .container .product-set-box .product-set-price{
+    margin-bottom: 0;
+    color: var(--color-accent);
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+  }
+}
+
+/* 商品紹介レスポンシブ */
+@media screen and (max-width:768px) {
+    .product-set{
+        padding: 6rem 6rem;
+    }
+    .product-set .container .product-set-box{
+        padding: 1rem 1rem;
+    }
+    .product-set .container .product-set-box h3{
+        margin-bottom: 1rem;
+    }
+    .product-set .container .product-set-box p{
+        margin-bottom: 1rem;
+    }
+}
 
 
+
+/*---------- 初回限定特典 ----------*/
+.first-trial{
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background-color: #f1faeb;
+    .container .trial-heading{
+        margin-bottom: 4rem;
+        & .trial-en{
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.15rem;
+        }
+        & h2{
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            line-height: 1.5;
+        }
+        & p{
+            line-height: 1.8;
+        }
+    }
+    /* 特典カード一覧 */
+    .container .trial-benefits{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+    }
+    /* 各特典カード 共通部分 */
+    .container .trial-benefits .trial-benefit{
+        position: relative;
+        padding: 2.5rem 1.5rem 6.5rem;
+        background-color: var(--color-base);
+        border: 1px solid #e2e9dc;
+        border-radius: 1.2rem;
+        box-shadow: 0 5px 10px rgba(50, 70, 40, 0.3);
+        /* 番号 */
+        & .benefit-number{
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+            letter-spacing: 0.1rem;
+        }
+        /* タイトル */
+        & h3{
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: var(--color-accent5);
+        }
+        /* 特典説明 */
+        & > p:not(.benefit-number){
+            color: #555;
+            text-align: left;
+        }
+        /* アイコンの共通設定 */
+        & .benefit-icon::after{
+            content: "";
+            position: absolute;
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            left: 50%;
+            bottom: 1rem;
+            transform: translateX(-50%);
+            background-position: center;
+            background-size: contain;
+        }
+        /* 特典ごとのアイコン */
+         & .benefit-discount::after{
+            background-image: url(../images/product/benefit_01.png);
+         }
+         & .benefit-shipping::after{
+            background-image: url(../images/product/benefit_02.png);
+         }
+         & .benefit-cycle::after{
+            background-image: url(../images/product/benefit_03.png);
+         }
+         & .benefit-cancel::after{
+            background-image: url(../images/product/benefit_04.png);
+         }
+    }
+}
+
+
+
+/* 初回限定特典レスポンシブ */
+@media screen and (max-width:768px) {
+  .first-trial {
+    .container .trial-benefits {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+  }
+}
+
+
+/*--------------------
+   product レスポンシブ
+ ---------------------*/
 
 
 
