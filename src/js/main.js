@@ -12,14 +12,17 @@ new Splide( '.splide',{
     type   : 'loop',
     perPage: 5,
     autoplay: true, //自動再生
-    interval: 4000, // 自動再生の間隔
+    interval: 5000, // 自動再生の間隔
     focus: "center",//中央をアクティブに
-    gap: "1rem",//スライド間の余白
+    gap: "0.5rem",//スライド間の余白
     
     breakpoints: {
         768: {
             perPage: 3,
-        }
+        },
+        480: {
+            perPage:1,
+        },
     }
 } ).mount();
 

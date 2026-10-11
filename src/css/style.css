@@ -203,7 +203,7 @@ main{
 
 
 /*----------------
-　fvのBoxのobserve
+  fvのBoxのobserve
 ---------------*/
 .fv {
     /* BOXアニメーション */
@@ -371,7 +371,7 @@ main{
  ---------------------*/
 @media screen and (max-width:768px) {
     .about{
-        padding: 5rem 0;
+        padding: 5rem 0 2rem;
     }
     .about .about-heading{
         margin-bottom: 2rem;
@@ -412,7 +412,7 @@ main{
     .about .about-content .about-visual .about-bottle {
         position: relative;
         width: 115%;
-        right: 10%;
+        right: 8%;
         bottom: auto;
         & img{
             width: 100%;
@@ -651,6 +651,9 @@ main{
   }
 }
 @media (max-width: 768px) {
+  .reasons{
+    padding-bottom:6rem;
+    }
   .reasons .container .reasons-list {
     grid-template-columns: 1fr;
     & .reason-item:last-child .reason-medal {
@@ -821,7 +824,6 @@ main{
 }
 
 
-
 /* 初回限定特典レスポンシブ */
 @media screen and (max-width:768px) {
   .first-trial {
@@ -831,6 +833,99 @@ main{
     }
   }
 }
+
+
+/*---------- お客様の声 ----------*/
+.customer-voice{
+    padding: 8rem 0;
+    background-color: var(--color-base);
+    /* セクション見出し */
+    .container .voice-heading{
+        margin-bottom: 4rem;
+        text-align: center;
+        & .voice-en{
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.15rem;
+        }
+        & h2{
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            line-height: 1.5;
+            color: var(--color-accent5);
+        }
+    }
+
+    /* スライダー全体 */
+    .voice-splide{
+        padding: 0 1.5rem 3rem;
+    }
+    .voice-splide .splide__slide{
+        padding: 0.5rem; /*box-shadowの影のスペース*/
+    }
+    /*- 矢印の背景の丸 -*/
+    .voice-splide .splide__arrow{
+        background-color: var(--color-accent6);
+        opacity: 1;
+        width: 2rem;   /* 矢印ボタンの幅 */
+        height: 2rem;  /* 矢印ボタンの高さ */
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.3s ease,
+    }
+    /* 矢印の色とサイズ */
+    .voice-splide .splide__arrow svg {
+        fill: var(--color-accent5);
+        width: 1.2rem;
+        height: 1.2rem;
+        transition: fill 0.3s ease;
+    }
+    /*- 左矢印 -*/
+    .voice-splide .splide__arrow--prev {
+        left: -1rem;
+    }
+    /*- 右矢印 -*/
+    .voice-splide .splide__arrow--next {
+        right: -1rem;
+    }
+
+    /* ホバー時 */
+    .voice-splide .splide__arrow:hover{
+       background-color: #eee7d6;
+    }
+    .voice-splide .splide__arrow:hover svg {
+        fill: var(--color-accent);
+    }
+
+    
+    /* ページネーションのスタイル */
+    .voice-splide .splide__pagination__page{
+        background-color: var(--color-accent6);
+    }
+    .voice-splide .splide__pagination__page.is-active{
+        background-color: var(--color-accent3);
+    }
+
+    .voice-splide .splide__track .splide__list{
+    /* お客様の声の画像 */
+        & .splide__slide img{
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 3px 5px rgba(47, 58, 51, 0.3);
+        }
+    }
+    .voice-note{
+        margin-top: 1rem;
+        color: var(--color-accent5);
+    }
+}
+
+
 
 
 /*--------------------
