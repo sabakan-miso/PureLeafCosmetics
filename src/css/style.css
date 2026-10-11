@@ -927,16 +927,167 @@ main{
 
 
 
-
-/*--------------------
-   product レスポンシブ
- ---------------------*/
-
-
-
 /*--------------------
    news
  ---------------------*/
+
+.news {
+    padding: 8rem 0;
+    background-image: url(../images/background/news_back.jpg);
+    background-position: center;
+    background-size: cover;
+/* セクション見出し */
+    .container .news-heading {
+        margin-bottom: 4rem;
+        text-align: center;
+
+        /* 英語の見出し */
+        & .news-en {
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.15rem;
+        }
+
+        /* 日本語の見出し */
+        & h2 {
+            margin-bottom: 1.5rem;
+            color: var(--color-accent5);
+            font-size: 2.8rem;
+            line-height: 1.5;
+        }
+
+        /* 見出しの説明文 */
+        & > p:last-child {
+            line-height: 1.8;
+        }
+    }
+
+    /* お知らせ一覧 */
+    .container .news-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+        border-top: 1px solid #aeaeaa;
+    }
+
+    /* お知らせ1件分 */
+    .container .news-list .news-item {
+        border-bottom: 1px solid  #aeaeaa;
+        /* 日付・カテゴリ・タイトル・矢印 */
+        & .news-link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+            color: var(--color-accent5);
+            cursor: pointer;
+            /* ホバー時の色 */
+            transition: color 0.3s ease,
+                        background-color 0.3s ease;
+        }
+        /* 日付 */
+        & .news-link time {
+            flex-shrink: 0;
+            color: #535252;
+            font-size: 1.3rem;
+            font-variant-numeric: tabular-nums; /*数字の幅をそろえるため*/
+        }
+        /* カテゴリ */
+        & .news-link .news-category {
+            flex-shrink: 0;
+            min-width: 9rem;
+            padding: 0.5rem 0.8rem;
+            border: 1px solid #aeaeaa;
+            border-radius: 0.3rem;
+            color: var(--color-accent5);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        /* お知らせタイトル */
+        & .news-link .news-title {
+            flex: 1;
+            min-width: 0;
+            line-height: 1.8;
+        }
+        /* 矢印 */
+        & .news-link .news-arrow {
+            flex-shrink: 0; /*0は要素を縮ませない、1にすると縮む*/
+            display: inline-block;
+            color: var(--color-accent);
+            font-size: 1.8rem;
+            /* 矢印の動き */
+            transition: transform 0.3s ease;
+        }
+        /* お知らせにマウスホバー */
+        & .news-link:hover {
+            color: var(--color-accent);
+            background-color: #f4f6ed;
+        }
+        /* 矢印を右へ */
+        & .news-link:hover .news-arrow {
+            transform: translateX(0.4rem);
+        }
+
+
+    }
+    /* お知らせ一覧ボタンの位置 */
+    .container .news-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 3.5rem;
+        /* リンク予定ボタン */
+        & .news-link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            min-width: 22rem;
+            padding: 1.5rem 3rem;
+            border: 1px solid var(--color-accent);
+            border-radius: 5rem;
+            font-size: 1.6rem;
+            color: var(--color-accent5);
+            box-shadow: 0 5px 10px rgba(47, 58, 51, 0.3);
+            cursor: pointer; /*リンクにしたらいらない*/
+            /* ホバー時の動き */
+            transition: color 0.3s ease,
+                        background-color 0.3s ease;
+        }
+        /* ボタンの矢印 */
+        .news-link-button span:last-of-type{
+            display: inline-block;
+            color: var(--color-accent);
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        /* ホバー時のボタン */
+        & .news-link-button:hover {
+            color: var(--color-base);
+            background-color: var(--color-accent4);
+        }
+        /* ホバー時の矢印 */
+        & .news-link-button:hover span {
+            color: var(--color-base);
+            transform: translateX(0.4rem);
+        }
+    }
+}
+
+
+/*--------------------
+   news レスポンシブ
+ ---------------------*/
+@media screen and (max-width: 768px) {
+    .news {
+        padding: 5rem 0;
+        .container .news-heading {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+
 
 
 
