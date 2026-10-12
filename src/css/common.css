@@ -458,23 +458,6 @@ header
 
 
 
-/*--------------
-footer
----------------*/
-footer{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    
-    .container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        
-    }
-}
-
-
 
 
 

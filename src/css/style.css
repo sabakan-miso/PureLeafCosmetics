@@ -1108,6 +1108,18 @@ main{
             letter-spacing: 0.15rem;
         }
 
+        & .contact-en::after{
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto;
+            background-image: url(../images/contact/leaf.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
         & h2 {
             margin-bottom: 1.5rem;
             color: var(--color-accent5);
@@ -1204,15 +1216,58 @@ main{
         }
     }
 }
-
-
-
-
-
-
     
 
 
 /*--------------------
      フッター
  ---------------------*/
+ .site-footer {
+    padding: 4rem 0 2rem;
+    background-color: #f8f8f1;
+    text-align: center;
+    
+    /* ロゴ */
+    .container .footer-logo {
+        margin-bottom: 2rem;
+    }
+
+    .container .footer-logo a {
+        color: var(--color-accent5);
+        font-size: 2.4rem;
+    }
+    .container .footer-logo a:hover{
+        color: var(--color-accent);
+    }
+
+    /* SNSリンク */
+    .container .social-links-area {
+        margin-bottom: 2.5rem;
+    }
+
+    /* コピーライト */
+    .container .footer-copy {
+        margin: 0;
+        color: #888;
+        font-size: 1.4rem;
+    }
+}
+
+/* footerレスポンシブ */
+@media screen and (max-width: 768px) {
+    .site-footer {
+        padding: 3rem 0 1.5rem;
+
+        .container .footer-logo a {
+            font-size: 2rem;
+        }
+
+        .container .social-links {
+            gap: 1.5rem;
+        }
+
+        .container .footer-copy {
+            font-size: 1.1rem;
+        }
+    }
+}
