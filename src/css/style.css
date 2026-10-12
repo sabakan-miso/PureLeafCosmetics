@@ -930,7 +930,6 @@ main{
 /*--------------------
    news
  ---------------------*/
-
 .news {
     padding: 8rem 0;
     background-image: url(../images/background/news_back.jpg);
@@ -1088,14 +1087,128 @@ main{
 }
 
 
-
-
-
-
-
 /*--------------------
    contact
  ---------------------*/
+.contact {
+    padding: 8rem 0;
+    background-image: url("../images/contact/contact_back.jpg");
+    background-position: center;
+    background-size: cover;
+
+    /* 見出し */
+    .container .contact-heading {
+        margin-bottom: 4rem;
+        text-align: center;
+
+        & .contact-en {
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            font-size: 1.4rem;
+            letter-spacing: 0.15rem;
+        }
+
+        & h2 {
+            margin-bottom: 1.5rem;
+            color: var(--color-accent5);
+            font-size: 2.8rem;
+            line-height: 1.5;
+        }
+
+         & > p:last-child {
+            line-height: 1.9;
+        }
+    }   
+
+    /* よくあるご質問のボックス */
+    .container .contact-faq {
+        max-width: 700px;
+        margin: 0 auto 4rem;
+        padding: 2.5rem;
+        border: 1px solid #d9ddcf;
+        border-radius: 1rem;
+        background-color: rgb(255 255 255 / 75%);
+        text-align: center;
+
+        & h3 {
+            margin-bottom: 1.5rem;
+            color: var(--color-accent5);
+            font-size: 1.8rem;
+        }
+
+        & p {
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            line-height: 1.9;
+        }
+
+        /* よくあるご質問のリンク風表示 */
+        & .contact-faq-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            gap: 1rem;
+            color: var(--color-accent5);
+            cursor: pointer; /*a href=""にしたらいらない*/
+            transition: color 0.3s ease;
+        }
+
+        & .contact-faq-link:hover {
+            color: var(--color-accent);
+        }
+
+        & .contact-faq-link span:last-child {
+            display: inline-block;
+            color: var(--color-accent5);
+            transition: transform 0.3s ease;
+        }
+
+        & .contact-faq-link:hover span:last-child {
+            color: var(--color-accent);
+            transform: translateX(0.4rem);
+        }
+
+    }    
+    /* 共通CTAボタンの配置 */    
+}
+
+/*--------------------
+   contact レスポンシブ
+ ---------------------*/
+@media screen and (max-width: 768px) {
+    .contact {
+        padding: 5rem 0;
+        background-image: url(../images/contact/contact_sp.jpg);
+
+        .container .contact-heading {
+            margin-bottom: 3rem;
+        }
+
+        .container .contact-heading h2 {
+            font-size: 2.4rem;
+        }
+
+        .container .contact-heading > p:last-child br,
+        .container .contact-faq p br {
+            display: none;
+        }
+
+        .container .contact-faq {
+            margin-bottom: 3rem;
+            padding: 2rem 1.5rem;
+        }
+
+        .container .contact-faq h3 {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+
+
+
+
 
     
 
